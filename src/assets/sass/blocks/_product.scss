@@ -1,6 +1,53 @@
 .product {
-  background-color: rgba(0, 0, 0, 0.1);
-  outline: 1px dotted #666666;
-  outline-offset: -1px;
+  position: relative;
+  display: flex;
+  gap: 30px;
+  height: 135px;
+  padding: 15px 0 0 15px;
 
+  &:not(:last-child) {
+    margin-bottom: 11px;
+    border-bottom: 1px solid #c4c4c4;
+  }
+}
+
+.product__picture {
+  width: 100px;
+  height: 100px;
+}
+
+.product__detail {
+}
+
+.product__quantity {
+}
+
+.product__total-price {
+  width: 124px;
+  padding-top: 36px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 145%;
+  text-align: right;
+  color: #1f2432;
+
+  span {
+    &::after {
+      content: ' \20BD';
+    }
+  }
+}
+
+.product__btn-remove {
+  position: absolute;
+  content: '';
+  top: 15px;
+  right: 7px;
+  width: 12px;
+  height: 12px;
+  background-color: unset;
+  border: unset;
+  outline: unset;
+  cursor: pointer;
 }

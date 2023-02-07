@@ -1,0 +1,30 @@
+.cart {
+  display: grid;
+  grid-template-columns: 800px 425px;
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    'h .'
+    'p a'
+    'f f';
+  column-gap: 55px;
+}
+
+.cart__header {
+  grid-area: h;
+}
+
+.cart__list-of-products {
+  grid-area: p;
+
+  ul {
+    margin-bottom: 23px;
+  }
+}
+
+.cart__action {
+  grid-area: a;
+}
+
+.cart__footer {
+  grid-area: f;
+}

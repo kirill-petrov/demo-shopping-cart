@@ -1,0 +1,40 @@
+.quantity {
+  display: flex;
+  gap: 2px;
+  padding-top: 32px;
+}
+
+.quantity__btn {
+  width: 32px;
+  height: 34px;
+  background-color: #f6f8fa;
+  border: unset;
+  outline: unset;
+  cursor: pointer;
+
+  &--dec {
+    order: 1;
+    border-radius: 4px 0 0 4px;
+  }
+
+  &--inc {
+    order: 3;
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+.quantity__value {
+  order: 2;
+
+  display: grid;
+  place-content: center;
+
+  width: 35px;
+  height: 34px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #1f2432;
+  background-color: #f6f8fa;
+  text-align: center;
+}

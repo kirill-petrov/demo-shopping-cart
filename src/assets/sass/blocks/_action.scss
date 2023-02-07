@@ -1,0 +1,30 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/vars' as *;
+
+.action {
+  height: 458px;
+  padding: 35px 30px 0;
+  font-family: $font-lato;
+  color: #1f2432;
+  background-color: #f6f8fa;
+  border-radius: 5px;
+}
+
+.action__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120.52%;
+  margin-bottom: 30px;
+}
+
+.action__total-cost {
+  margin-bottom: 30px;
+}
+
+.action__button {
+  @include mix.button;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}

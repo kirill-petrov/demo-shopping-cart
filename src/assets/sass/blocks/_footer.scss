@@ -1,0 +1,18 @@
+@use '../abstracts/vars' as *;
+
+.footer {
+  display: grid;
+  grid-template-rows: 95px auto;
+  padding: 97px 0 116px;
+  font-family: $font-lato;
+  color: $color-text-base;
+}
+
+.footer__title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 120.52%;
+}
+
+.footer__slider {
+}

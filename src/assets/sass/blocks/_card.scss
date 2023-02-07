@@ -1,0 +1,62 @@
+@use '../abstracts/vars' as *;
+@use '../abstracts/mixins' as mix;
+
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  width: 305px;
+  min-height: 563px;
+  padding: 25px;
+  font-family: $font-lato;
+  color: $color-text-base;
+  background-color: $color-bg-accent;
+  border-radius: 5px;
+}
+
+.card__image-wrapper {
+  width: 245px;
+  height: 245px;
+  margin-bottom: 6px;
+}
+
+.card__info-wrapper {
+}
+
+.card__title {
+  margin-bottom: 10px;
+
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 120.52%;
+}
+.card__desc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 145%;
+}
+
+.card__price-block {
+  margin-bottom: 20px;
+
+  font-family: $font-lato;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 145%;
+  color: #797b86;
+
+  strong {
+    margin-bottom: 20px;
+
+    font-family: $font-roboto;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 130%;
+    letter-spacing: 0.005em;
+    color: $color-text-base;
+  }
+}
+
+.card__btn {
+  @include mix.button;
+  font-size: 16px;
+}

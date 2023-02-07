@@ -1,0 +1,30 @@
+.checkbox {
+}
+
+.checkbox__input {
+  position: relative;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url('/src/assets/svg/checkbox.svg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 12px;
+    transform: translate(-50%, -50%) scale(0);
+    background-image: url('/src/assets/svg/tick.svg#base');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.2s ease-out 0s;
+  }
+}

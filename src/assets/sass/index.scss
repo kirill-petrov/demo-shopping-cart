@@ -1,7 +1,20 @@
-/* Components */
+// Fonts
 
-@use "./blocks/container";
-@use "./blocks/header";
-@use "./blocks/breadcrumbs";
-@use "./blocks/product";
+@use './fonts/fonts';
 
+// Components
+
+@use './blocks/action';
+@use './blocks/additional-service';
+@use './blocks/breadcrumbs';
+@use './blocks/card';
+@use './blocks/cart-header';
+@use './blocks/cart';
+@use './blocks/checkbox';
+@use './blocks/container';
+@use './blocks/footer';
+@use './blocks/header';
+@use './blocks/product-desc';
+@use './blocks/product';
+@use './blocks/quantity';
+@use './blocks/total-cost';

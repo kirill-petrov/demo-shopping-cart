@@ -1,0 +1,57 @@
+@use '../abstracts/vars' as *;
+
+.total-cost {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 18px;
+  font-family: $font-lato;
+  color: #1f2432;
+
+  dt {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 145%;
+
+    &:nth-last-of-type(2) {
+      margin-bottom: 21px;
+    }
+
+    &:nth-last-of-type(1) {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 145%;
+    }
+  }
+
+  dd {
+    font-family: $font-roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 145%;
+    text-align: end;
+
+    &:nth-last-of-type(2) {
+      margin-bottom: 21px;
+    }
+
+    &:nth-last-of-type(1) {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 130%;
+      letter-spacing: 0.005em;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 133px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #AEB0B6;
+  }
+}
