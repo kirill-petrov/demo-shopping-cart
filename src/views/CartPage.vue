@@ -1,7 +1,8 @@
 <script setup>
-import MainHeader from '../components/MainHeader.vue';
 import { computed } from 'vue';
 import { useStore } from 'vuex';
+import MainHeader from '../components/MainHeader.vue';
+import BreadcrumbsNav from '../components/BreadcrumbsNav.vue';
 
 const store = useStore();
 
@@ -11,12 +12,7 @@ const itemsQuantity = computed(() => store.getters['cart/getItemsQuantity']);
 <template>
   <MainHeader :itemsQuantity="itemsQuantity" />
 
-  <nav class="container">
-    <ul class="breadcrumbs">
-      <li class="breadcrumbs__item"><a href="#">Главная</a></li>
-      <li class="breadcrumbs__item breadcrumbs__item--current">Корзина</li>
-    </ul>
-  </nav>
+  <BreadcrumbsNav />
 
   <main class="cart container">
     <header class="cart__header cart-header">
