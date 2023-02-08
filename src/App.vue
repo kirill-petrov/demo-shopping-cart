@@ -1,42 +1,12 @@
 <script setup>
-import { ref } from 'vue';
 
-const order = [
-  {
-    id: 1,
-    art: 'g2h1065',
-    name: 'Вытяжное устройство G2H',
-    desc: '12-72/168 м3/ч / гидрорегулируемый расход / от датчика присутствия',
-    count: 1,
-    img: '/src/assets/img/bxc.jpg',
-    img2x: '/src/assets/img/bxc.jpg',
-  },
-  {
-    id: 2,
-    art: 'G2H1065',
-    name: 'Вытяжное устройство BXC',
-    desc: '12-72/168 м3/ч / гидрорегулируемый расход / от датчика присутствия',
-    count: 2,
-    img: '/src/assets/img/bxc.jpg',
-    img2x: '/src/assets/img/bxc-2x.jpg',
-  },
-  {
-    id: 3,
-    art: 'G2H1065',
-    name: 'Вытяжное устройство GHN',
-    desc: '12-72/168 м3/ч / гидрорегулируемый расход / от датчика присутствия',
-    count: 1,
-    img: '/src/assets/img/bxc.jpg',
-    img2x: '/src/assets/img/bxc.jpg',
-  },
-];
 </script>
 
 <template>
   <header class="header">
     <div class="header__cart container">
       <div>Ваша корзина</div>
-      <p><span>3 товара</span></p>
+      <p><span>{{ $store.state.cart.order.length }} товара</span></p>
       <p>Сумма</p>
     </div>
   </header>
