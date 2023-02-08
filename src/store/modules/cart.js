@@ -36,6 +36,23 @@ export const cart = {
     getOrder(state) {
       return state.order;
     }, // -> getters['account/isAdmin']
+    getItemsQuantity(state) {
+      let num = 0;
+
+      state.order.forEach(item => num += item.count)
+
+      if (num < 0) {
+        return 'Корзина пуста';
+      } else if (num === 1) {
+        return '1 товар';
+      } else if (num > 1 && num < 5) {
+        return `${num} товара`;
+      } else {
+        return `${num} товаров`;
+      }
+
+      // todo: додумать — 101, 102, 103, 1001
+    }
   },
   actions: {
     // login() {}, // -> dispatch('account/login')
