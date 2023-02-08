@@ -3,6 +3,7 @@ import { computed } from 'vue';
 import { useStore } from 'vuex';
 import MainHeader from '../components/MainHeader.vue';
 import BreadcrumbsNav from '../components/BreadcrumbsNav.vue';
+import CartHeader from '../components/CartHeader.vue';
 
 const store = useStore();
 
@@ -15,13 +16,7 @@ const itemsQuantity = computed(() => store.getters['cart/getItemsQuantity']);
   <BreadcrumbsNav />
 
   <main class="cart container">
-    <header class="cart__header cart-header">
-      <h1 class="cart-header__title">Ваша корзина</h1>
-      <span class="cart-header__num-of-products">4 товара</span>
-      <button class="cart-header__clear-cart" type="button">
-        Очистить корзину
-      </button>
-    </header>
+    <CartHeader :itemsQuantity="itemsQuantity" />
 
     <section class="cart__list-of-products">
       <ul>
