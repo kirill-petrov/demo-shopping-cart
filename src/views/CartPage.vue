@@ -5,11 +5,13 @@ import MainHeader from '../components/MainHeader.vue';
 import BreadcrumbsNav from '../components/BreadcrumbsNav.vue';
 import CartHeader from '../components/CartHeader.vue';
 import ListOfProducts from '../components/ListOfProducts.vue';
+import CartAside from '../components/CartAside.vue';
 
 const store = useStore();
 
 const itemsQuantity = computed(() => store.getters['cart/getItemsQuantity']);
 const order = computed(() => store.getters['cart/getOrderList']);
+const orderData = computed(() => store.getters['cart/getOrderData']);
 const additionalService = computed(
   () => store.getters['cart/getAdditionalService'],
 );
@@ -45,28 +47,7 @@ const setService = () => store.commit('cart/setAdditionalService');
       @set-service="setService"
     />
 
-    <aside class="cart__action action">
-      <h2 class="action__title">Итого</h2>
-
-      <dl class="action__total-cost total-cost">
-        <dt>Сумма заказа</dt>
-        <dd>50 576 ₽</dd>
-
-        <dt>Количество</dt>
-        <dd>4 шт</dd>
-
-        <dt>Установка</dt>
-        <dd>Нет</dd>
-
-        <dt>Стоимость товаров</dt>
-        <dd>50 576 ₽</dd>
-      </dl>
-
-      <button class="action__button" type="button">Оформить заказ</button>
-      <button class="action__button action__button--secondary" type="button">
-        Купить в 1 клик
-      </button>
-    </aside>
+    <CartAside class="cart__action" :orderData="orderData"/>
 
     <footer class="cart__footer footer">
       <h2 class="footer__title">Просмотренные товары</h2>

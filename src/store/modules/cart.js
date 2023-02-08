@@ -39,7 +39,23 @@ export const cart = {
   getters: {
     getOrderList(state) {
       return state.order;
-    }, // -> getters['account/isAdmin']
+    },
+    getOrderData(state) {
+      let orderData = {
+        price: 0,
+        totalPrice: 0,
+        totalQuantity: 0,
+        additionalService: state.additionalService,
+      };
+
+      state.order.forEach(item => {
+        orderData.price += item.price * item.count;
+        orderData.totalPrice += item.price * item.count;
+        orderData.totalQuantity += item.count;
+      })
+
+      return orderData;
+    },
     getItemsQuantity(state) {
       let num = 0;
 
