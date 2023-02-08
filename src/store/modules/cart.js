@@ -48,11 +48,11 @@ export const cart = {
         additionalService: state.additionalService,
       };
 
-      state.order.forEach(item => {
+      state.order.forEach((item) => {
         orderData.price += item.price * item.count;
         orderData.totalPrice += item.price * item.count;
         orderData.totalQuantity += item.count;
-      })
+      });
 
       return orderData;
     },
@@ -74,11 +74,23 @@ export const cart = {
       // todo: додумать — 101, 102, 103, 1001
     },
     getAdditionalService(state) {
-      return state.additionalService
-    }
+      return state.additionalService;
+    },
   },
   actions: {
-    // login() {}, // -> dispatch('account/login')
+    async sendData({}, body) {
+      console.log('sendData **', body);
+
+      const res = await fetch('/shop', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+
+      return await res.json();
+    },
   },
   mutations: {
     incrementItemQuantity(state, id) {

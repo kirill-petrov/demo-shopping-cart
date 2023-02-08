@@ -1,7 +1,14 @@
 <script setup>
 const props = defineProps({
-  itemsQuantity: String,
-  required: true,
+  itemsQuantity: {
+    type: String,
+    required: true,
+  },
+  totalPrice: {
+    type: Number,
+    required: true,
+    default: 0,
+  },
 });
 </script>
 
@@ -14,7 +21,7 @@ const props = defineProps({
         <span>{{ itemsQuantity }}</span>
       </p>
 
-      <p style="color: red">{{ '000' }} ₽</p>
+      <p>{{ totalPrice }} ₽</p>
     </div>
   </header>
 </template>

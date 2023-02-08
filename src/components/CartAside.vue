@@ -1,10 +1,14 @@
 <script setup>
+const emit = defineEmits(['send-order']);
+
 const props = defineProps({
   orderData: {
     post: Object,
     required: true,
   },
 });
+
+const sendOrder = () => emit('send-order');
 </script>
 
 <template>
@@ -22,10 +26,12 @@ const props = defineProps({
       <dd>{{ orderData.totalQuantity ? 'Да' : 'Нет' }}</dd>
 
       <dt>Стоимость товаров</dt>
-      <dd>{{ orderData.totalPrice }}  ₽</dd>
+      <dd>{{ orderData.totalPrice }} ₽</dd>
     </dl>
 
-    <button class="action__button" type="button">Оформить заказ</button>
+    <button class="action__button" type="button" @click="sendOrder">
+      Оформить заказ
+    </button>
     <button class="action__button action__button--secondary" type="button">
       Купить в 1 клик
     </button>

@@ -27,10 +27,20 @@ const decrementItemQuantity = (id) => {
 const removeAnItem = (id) => store.commit('cart/removeAnItem', id);
 
 const setService = () => store.commit('cart/setAdditionalService');
+
+const sendOrder = () => {
+  store.dispatch('cart/sendData', {
+    list: [...order.value],
+    ...orderData.value,
+  });
+};
 </script>
 
 <template>
-  <MainHeader :itemsQuantity="itemsQuantity" />
+  <MainHeader
+    :itemsQuantity="itemsQuantity"
+    :totalPrice="orderData.totalPrice"
+  />
 
   <BreadcrumbsNav />
 
@@ -47,7 +57,11 @@ const setService = () => store.commit('cart/setAdditionalService');
       @set-service="setService"
     />
 
-    <CartAside class="cart__action" :orderData="orderData"/>
+    <CartAside
+      class="cart__action"
+      :orderData="orderData"
+      @send-order="sendOrder"
+    />
 
     <footer class="cart__footer footer">
       <h2 class="footer__title">Просмотренные товары</h2>
