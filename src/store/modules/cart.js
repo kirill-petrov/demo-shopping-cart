@@ -11,6 +11,7 @@ export const cart = {
         count: 1,
         img: '/src/assets/img/bxc.jpg',
         img2x: '/src/assets/img/bxc.jpg',
+        price: 12644,
       },
       {
         id: 2,
@@ -20,6 +21,7 @@ export const cart = {
         count: 2,
         img: '/src/assets/img/bxc.jpg',
         img2x: '/src/assets/img/bxc-2x.jpg',
+        price: 12644,
       },
       {
         id: 3,
@@ -29,17 +31,19 @@ export const cart = {
         count: 1,
         img: '/src/assets/img/bxc.jpg',
         img2x: '/src/assets/img/bxc.jpg',
+        price: 12644,
       },
     ],
+    additionalService: false,
   }),
   getters: {
-    getOrder(state) {
+    getOrderList(state) {
       return state.order;
     }, // -> getters['account/isAdmin']
     getItemsQuantity(state) {
       let num = 0;
 
-      state.order.forEach(item => num += item.count)
+      state.order.forEach((item) => (num += item.count));
 
       if (num < 0) {
         return 'Корзина пуста';
@@ -52,18 +56,30 @@ export const cart = {
       }
 
       // todo: додумать — 101, 102, 103, 1001
+    },
+    getAdditionalService(state) {
+      return state.additionalService
     }
   },
   actions: {
     // login() {}, // -> dispatch('account/login')
   },
   mutations: {
-    incrementItemQuantity(state, payload) {
-      const cartItem = state.order.find((item) => {
-        if (item.id === payload.id) {
-          item.count = payload.count;
-        }
+    incrementItemQuantity(state, id) {
+      state.order.find((item) => {
+        if (item.id === id) item.count += 1;
       });
-    }, // -> commit('account/login')
+    },
+    decrementItemQuantity(state, id) {
+      state.order.find((item) => {
+        if (item.id === id) item.count -= 1;
+      });
+    },
+    removeAnItem(state, id) {
+      state.order = state.order.filter((item) => item.id !== id);
+    },
+    setAdditionalService(state) {
+      state.additionalService = !state.additionalService;
+    },
   },
 };
