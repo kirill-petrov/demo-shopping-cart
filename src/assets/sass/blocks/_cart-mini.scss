@@ -1,0 +1,32 @@
+@use '../abstracts/vars' as *;
+
+.cart-mini {
+  position: relative;
+  padding: 65px 0 0 50px;
+  font-family: $font-lato;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 145%;
+  color: $color-text-base;
+
+  p:nth-child(1) {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  p:nth-child(2) {
+    color: #797b86;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: 12px;
+    left: 7px;
+    width: 28px;
+    height: 25px;
+    background-image: url('/src/assets/svg/cart.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

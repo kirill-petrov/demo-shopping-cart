@@ -22,7 +22,7 @@ const modules = [Navigation, Pagination];
         nextEl: '.slider-controls__next',
       }"
       :pagination="{
-        el: '.slider-controls__pagination',
+        el: '.swiper-pagination',
         type: 'fraction',
       }"
       :slides-per-view="4"
@@ -34,7 +34,7 @@ const modules = [Navigation, Pagination];
       </swiper-slide>
     </swiper>
 
-    <div class="slider-controls__pagination">asd</div>
+    <div class="swiper-pagination"></div>
 
     <div class="slider-controls__prev"></div>
     <div class="slider-controls__next"></div>
@@ -47,6 +47,7 @@ const modules = [Navigation, Pagination];
 .swiper {
   width: 1280px;
   height: 563px;
+  overflow-x: hidden;
 }
 
 .slider-controls {
@@ -78,10 +79,12 @@ const modules = [Navigation, Pagination];
   background-size: contain;
 }
 
-.slider-controls__pagination {
+.swiper-pagination {
   position: absolute;
   top: -85px;
-  left: 1172px;
+  left: 1167px;
+  width: 50px;
+  height: 50px;
 
   font-family: $font-lato;
   font-weight: 400;

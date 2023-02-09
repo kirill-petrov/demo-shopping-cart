@@ -16,7 +16,6 @@ const increment = (id) => emit('increment', id);
 const decrement = (id) => emit('decrement', id);
 const remove = (id) => emit('remove', id);
 const setService = (id) => emit('set-service');
-
 </script>
 
 <template>
@@ -90,7 +89,12 @@ const setService = (id) => emit('set-service');
         </div>
 
         <div class="product__total-price">
-          <span>{{ item.price * item.count }}</span>
+          <span
+            >{{
+              new Intl.NumberFormat('ru-RU').format(item.price * item.count)
+            }}
+            ₽</span
+          >
         </div>
 
         <button

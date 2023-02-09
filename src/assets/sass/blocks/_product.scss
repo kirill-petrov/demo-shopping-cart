@@ -1,3 +1,5 @@
+@use "../abstracts/vars" as *;
+
 .product {
   position: relative;
   display: flex;
@@ -25,18 +27,12 @@
 .product__total-price {
   width: 124px;
   padding-top: 36px;
-  font-family: 'Roboto';
+  font-family: $font-roboto;
   font-weight: 500;
   font-size: 18px;
   line-height: 145%;
   text-align: right;
-  color: #1f2432;
-
-  span {
-    &::after {
-      content: ' \20BD';
-    }
-  }
+  color: $color-text-base;
 }
 
 .product__btn-remove {

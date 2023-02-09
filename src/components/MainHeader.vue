@@ -14,16 +14,17 @@ const props = defineProps({
 
 <template>
   <header class="header">
-    <div class="header__cart container">
-      <strong>Ваша корзина</strong>
-
-      <p>
-        <span>{{ itemsQuantity }}</span>
-      </p>
-
-      <p>{{ totalPrice }} ₽</p>
+    <div class="container">
+      <div class="header__wrapper">
+        <div class="cart-mini">
+          <p>Ваша корзина</p>
+          <p>{{ itemsQuantity }}</p>
+          <p>{{ new Intl.NumberFormat('ru-RU').format(totalPrice) }} ₽</p>
+        </div>
+      </div>
     </div>
   </header>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>

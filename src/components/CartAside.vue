@@ -17,7 +17,7 @@ const sendOrder = () => emit('send-order');
 
     <dl class="action__total-cost total-cost">
       <dt>Сумма заказа</dt>
-      <dd>{{ orderData.price }} ₽</dd>
+      <dd>{{ new Intl.NumberFormat('ru-RU').format(orderData.price) }} ₽</dd>
 
       <dt>Количество</dt>
       <dd>{{ orderData.totalQuantity }} шт</dd>
@@ -26,7 +26,9 @@ const sendOrder = () => emit('send-order');
       <dd>{{ orderData.totalQuantity ? 'Да' : 'Нет' }}</dd>
 
       <dt>Стоимость товаров</dt>
-      <dd>{{ orderData.totalPrice }} ₽</dd>
+      <dd>
+        {{ new Intl.NumberFormat('ru-RU').format(orderData.totalPrice) }} ₽
+      </dd>
     </dl>
 
     <button class="action__button" type="button" @click="sendOrder">

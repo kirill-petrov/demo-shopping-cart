@@ -109,5 +109,8 @@ export const cart = {
     setAdditionalService(state) {
       state.additionalService = !state.additionalService;
     },
+    clearCart(state) {
+      state.order = new Array();;
+    },
   },
 };

@@ -1,25 +1,10 @@
 @use '../abstracts/vars' as *;
 
 .header {
-  display: flex;
-  align-items: center;
   min-height: 141px;
-  text-align: end;
-  font-family: $font-lato;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 145%;
-  color: $color-text-base;
 }
 
-.header__cart {
-  strong {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-  }
-
-  span {
-    color: #797b86;
-  }
+.header__wrapper {
+  display: flex;
+  justify-content: flex-end;
 }

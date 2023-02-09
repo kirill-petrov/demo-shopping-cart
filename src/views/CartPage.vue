@@ -29,6 +29,8 @@ const removeAnItem = (id) => store.commit('cart/removeAnItem', id);
 
 const setService = () => store.commit('cart/setAdditionalService');
 
+const clearCart = () => store.commit('cart/clearCart');
+
 const sendOrder = () => {
   store.dispatch('cart/sendData', {
     list: [...order.value],
@@ -46,7 +48,11 @@ const sendOrder = () => {
   <BreadcrumbsNav />
 
   <main class="cart container">
-    <CartHeader class="cart__header" :itemsQuantity="itemsQuantity" />
+    <CartHeader
+      class="cart__header"
+      :itemsQuantity="itemsQuantity"
+      @clear-cart="clearCart"
+    />
 
     <ListOfProducts
       class="cart__list-of-products"
