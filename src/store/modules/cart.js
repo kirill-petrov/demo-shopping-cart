@@ -10,7 +10,7 @@ export const cart = {
         desc: '12-72/168 м3/ч / гидрорегулируемый расход / от датчика присутствия',
         count: 1,
         img: '/src/assets/img/bxc.jpg',
-        img2x: '/src/assets/img/bxc.jpg',
+        img2x: '../assets/img/bxc-2x.jpg',
         price: 12644,
       },
       {
@@ -30,7 +30,7 @@ export const cart = {
         desc: '12-72/168 м3/ч / гидрорегулируемый расход / от датчика присутствия',
         count: 1,
         img: '/src/assets/img/bxc.jpg',
-        img2x: '/src/assets/img/bxc.jpg',
+        img2x: '/src/assets/img/bxc-2x.jpg',
         price: 12644,
       },
     ],

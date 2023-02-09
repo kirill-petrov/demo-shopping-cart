@@ -15,7 +15,7 @@ const props = defineProps({
 const increment = (id) => emit('increment', id);
 const decrement = (id) => emit('decrement', id);
 const remove = (id) => emit('remove', id);
-const setService = (id) => emit('set-service');
+const setService = () => emit('set-service');
 </script>
 
 <template>
@@ -24,7 +24,7 @@ const setService = (id) => emit('set-service');
       <li class="product" v-for="item of order" :key="item.id">
         <div class="product__picture">
           <img
-            :src="item.img"
+            :src="item.img2x"
             width="100"
             height="100"
             alt="Изображение товара"
