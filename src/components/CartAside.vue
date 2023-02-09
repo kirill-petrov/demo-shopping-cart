@@ -23,7 +23,7 @@ const sendOrder = () => emit('send-order');
       <dd>{{ orderData.totalQuantity }} шт</dd>
 
       <dt>Установка</dt>
-      <dd>{{ orderData.totalQuantity ? 'Да' : 'Нет' }}</dd>
+      <dd>{{ orderData.additionalService ? 'Да' : 'Нет' }}</dd>
 
       <dt>Стоимость товаров</dt>
       <dd>
